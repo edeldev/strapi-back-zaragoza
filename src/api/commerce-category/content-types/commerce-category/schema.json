@@ -1,0 +1,23 @@
+{
+  "kind": "collectionType",
+  "collectionName": "commerce_categories",
+  "info": {
+    "singularName": "commerce-category",
+    "pluralName": "commerce-categories",
+    "displayName": "CommerceCategory"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "slug": {
+      "type": "uid",
+      "required": true
+    }
+  }
+}
