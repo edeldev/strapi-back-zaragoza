@@ -9,7 +9,6 @@ export default [
       origin: [process.env.FRONTEND_URL || "*"],
     },
   },
-  ,
   "strapi::poweredBy",
   "strapi::query",
   "strapi::body",
