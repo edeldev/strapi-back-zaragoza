@@ -595,6 +595,37 @@ export interface ApiEventEvent extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiNewNew extends Struct.CollectionTypeSchema {
+  collectionName: 'news';
+  info: {
+    displayName: 'New';
+    pluralName: 'news';
+    singularName: 'new';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    content: Schema.Attribute.Blocks & Schema.Attribute.Required;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    date: Schema.Attribute.Date & Schema.Attribute.Required;
+    images: Schema.Attribute.Media<'images', true> & Schema.Attribute.Required;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<'oneToMany', 'api::new.new'> &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    resume: Schema.Attribute.Blocks & Schema.Attribute.Required;
+    slug: Schema.Attribute.UID & Schema.Attribute.Required;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    video: Schema.Attribute.Media<'videos'>;
+  };
+}
+
 export interface PluginContentReleasesRelease
   extends Struct.CollectionTypeSchema {
   collectionName: 'strapi_releases';
@@ -1110,6 +1141,7 @@ declare module '@strapi/strapi' {
       'api::commerce-category.commerce-category': ApiCommerceCategoryCommerceCategory;
       'api::commerce-type.commerce-type': ApiCommerceTypeCommerceType;
       'api::event.event': ApiEventEvent;
+      'api::new.new': ApiNewNew;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
       'plugin::i18n.locale': PluginI18NLocale;
