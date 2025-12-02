@@ -607,6 +607,7 @@ export interface ApiNewNew extends Struct.CollectionTypeSchema {
   };
   attributes: {
     content: Schema.Attribute.Blocks & Schema.Attribute.Required;
+    contentTwo: Schema.Attribute.Blocks & Schema.Attribute.Required;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -622,7 +623,7 @@ export interface ApiNewNew extends Struct.CollectionTypeSchema {
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    video: Schema.Attribute.Media<'videos'>;
+    video: Schema.Attribute.String;
   };
 }
 

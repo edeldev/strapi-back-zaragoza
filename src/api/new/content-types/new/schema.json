@@ -39,13 +39,12 @@
         "images"
       ]
     },
+    "contentTwo": {
+      "type": "blocks",
+      "required": true
+    },
     "video": {
-      "type": "media",
-      "multiple": false,
-      "required": false,
-      "allowedTypes": [
-        "videos"
-      ]
+      "type": "string"
     }
   }
 }
