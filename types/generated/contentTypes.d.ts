@@ -392,11 +392,13 @@ export interface ApiActivitieActivitie extends Struct.CollectionTypeSchema {
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     description: Schema.Attribute.Blocks & Schema.Attribute.Required;
+    facebook: Schema.Attribute.String;
     images: Schema.Attribute.Media<
       'images' | 'files' | 'videos' | 'audios',
       true
     > &
       Schema.Attribute.Required;
+    instagram: Schema.Attribute.String;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -412,6 +414,7 @@ export interface ApiActivitieActivitie extends Struct.CollectionTypeSchema {
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    webSite: Schema.Attribute.String;
   };
 }
 
