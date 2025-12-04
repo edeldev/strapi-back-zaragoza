@@ -51,6 +51,15 @@
       "relation": "manyToOne",
       "target": "api::category.category",
       "inversedBy": "activities"
+    },
+    "webSite": {
+      "type": "string"
+    },
+    "facebook": {
+      "type": "string"
+    },
+    "instagram": {
+      "type": "string"
     }
   }
 }
